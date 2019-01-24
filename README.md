@@ -14,7 +14,7 @@ This application uses the MVC design concept to prop-up Views to the browser bas
 
 The Controller has a simple job, prop the inital View when the user goes to the web application, redirect the user to the results page after the submission event fires (ultimately handling the filtering of the "Man of the Year" file), and finally prop the results View with the relevant information.
 
-`c#
+```c#
 public class HomeController: Controller
 {
 [HttpGet]
@@ -35,14 +35,14 @@ public IActionResult Results(int startYear, int endYear)
 return View(TimePerson.GetPersons(startYear, endYear));
 }
 }
-`
+```
 
 ### View
 The View is what the user sees when they travel from one page of the web application to another. In this web application there are two Views, the Home Page and the Results Page.
 The View contains a mix of HTML5, CSS & Code to help build the UI and UX of the application.
 
 #### Home Page
-`html
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,10 +68,10 @@ The View contains a mix of HTML5, CSS & Code to help build the UI and UX of the 
 </div>
 </body>
 </html>
-`
+```
 
 #### Results Page
-`html
+```html
 <!DOCTYPE html>
 <html>
 <body>
@@ -115,7 +115,7 @@ The View contains a mix of HTML5, CSS & Code to help build the UI and UX of the 
 </table>
 </body>
 </html>
-`
+```
 
 ### Model
 This could be considered the most important part of the MVC process as it handles all the logic for what will happen on events.
@@ -124,7 +124,7 @@ It is also here that the application reads in the .csv document which holds the 
 
 It is clear in the following code that the method GetPersons uses StreamReader to read in all the data from the .csv file assigned to the variable "filepath" and then creates a collection which can then be queried and organized for what the user is looking for.
 
-`c#
+```c#
 public class TimePerson
 {
 public int Year { get; set; }
@@ -193,6 +193,6 @@ lines.Add(line);
 return lines;
 }
 }
-`
+```
 
 
