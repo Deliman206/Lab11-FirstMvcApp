@@ -1,0 +1,45 @@
+﻿@model List<TimePerson>;
+
+<!DOCTYPE html>
+<html>
+<body>
+
+    <table>
+        <tr style="border: solid 1px black; border-bottom:5px solid black;">
+            <th>Year</th>
+            <th>Name</th>
+            <th>Honor</th>
+            <th>Country</th>
+            <th>BirthYear</th>
+            <th>DeathYear</th>
+            <th>Title</th>
+            <th>Context</th>
+            <th>Category</th>
+        </tr>
+        @foreach(TimePerson person in Model)
+        {
+        <tr style="border: solid 1px black; border-bottom:5px solid black;">
+            <th>@person.Year</th>
+            <th>@person.Name</th>
+            <th>@person.Honor</th>
+            <th>@person.Country</th>
+            <th>
+                @if (person.BirthYear != 0)
+                {
+                    @person.BirthYear
+                }
+            </th>
+            <th>
+                @if (person.DeathYear != 0)
+                {
+                    @person.DeathYear
+                }
+            </th>
+            <th>@person.Title</th>
+            <th>@person.Context</th>
+            <th>@person.Category</th>
+        </tr>
+        }
+    </table>
+</body>
+</html>
