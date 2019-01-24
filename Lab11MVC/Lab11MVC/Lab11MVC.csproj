@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <None Include="wwwroot\personOfTheYear.csv" />
   </ItemGroup>
 
 </Project>
