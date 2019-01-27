@@ -30,7 +30,12 @@ namespace Lab11MVC.Models
             Category = category;
             Context = context;
         }
-
+        /// <summary>
+        /// Get all the people in the requested time range
+        /// </summary>
+        /// <param name="startYear"></param>
+        /// <param name="endYear"></param>
+        /// <returns></returns>
         public static List<TimePerson> GetPersons(int startYear, int endYear)
         {
             string filepath = @"\\mac\Home\codefellows\dn401\Lab11-FirstMvcApp\Lab11MVC\Lab11MVC\wwwroot\personOfTheYear.csv";
@@ -61,6 +66,11 @@ namespace Lab11MVC.Models
 
             return requestedPeople;
         }
+        /// <summary>
+        /// Create new StreamReader for data at file path
+        /// </summary>
+        /// <param name="filepath"></param>
+        /// <returns>List<string> of all data</returns>
         static List<string> Collection(string filepath)
         {
             var reader = new StreamReader(File.OpenRead(filepath));

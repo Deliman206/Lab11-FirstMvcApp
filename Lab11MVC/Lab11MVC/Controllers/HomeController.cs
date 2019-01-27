@@ -9,6 +9,10 @@ namespace Lab11MVC.Controllers
 {
     public class HomeController: Controller
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Index()
         {
